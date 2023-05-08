@@ -205,7 +205,7 @@ const Booking = () => {
                             onChange={(e) => setRoomNumber(e.target.value)}
                             name='roomNumber'
                             id='roomNumber'
-                            className='w-full p-2 rounded-md border border-slate-300 focus:outline-none focus:border-slate-500'
+                            className='w-full p-2 rounded-md border border-slate-300 focus:outline-none focus:border-slate-500  hover:bg-lime-300'
                         >
                             {/* place holder not selectable */}
                             <option value="select" unselectable='true' >Select Room</option>
@@ -226,7 +226,7 @@ const Booking = () => {
                             onChange={(e) => setDuration(e.target.value)}
                             name='duration'
                             id='duration'
-                            className='w-full p-2 rounded-md border border-slate-300 focus:outline-none focus:border-slate-500'
+                            className='w-full p-2 rounded-md border border-slate-300 focus:outline-none focus:border-slate-500 hover:bg-lime-300'
                         >
                             <option value='select' unselectable='true' >Select Duration</option>
                             <option value='Semester'>Full Sem</option>
