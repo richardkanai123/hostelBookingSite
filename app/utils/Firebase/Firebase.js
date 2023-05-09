@@ -12,12 +12,12 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: process.env.apiKey,
-    authDomain: process.env.authDomain,
-    projectId: process.env.projectId,
-    storageBucket: process.env.storageBucket,
-    messagingSenderId: process.env.messagingSenderId,
-    appId: process.env.appId
+    apiKey: "AIzaSyAFz32K--VCfsC9rXRm4QeK3dgKqIZUEvM",
+    authDomain: "hostelbookingapp1.firebaseapp.com",
+    projectId: "hostelbookingapp1",
+    storageBucket: "hostelbookingapp1.appspot.com",
+    messagingSenderId: "141515127444",
+    appId: "1:141515127444:web:b0c3d8d4ed14cd7b2dd281"
 };
 
 // Initialize Firebase
