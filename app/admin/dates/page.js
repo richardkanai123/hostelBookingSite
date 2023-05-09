@@ -1,5 +1,4 @@
 'use client'
-
 import { useEffect, useState } from "react"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { db, auth } from "@/app/utils/Firebase/Firebase"
@@ -8,12 +7,11 @@ import { collection, doc, getDoc, setDoc } from "firebase/firestore"
 // toastify
 import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import NotLogged from "@/components/NotLogged"
 
 const Page = () => {
 
     useEffect(() => {
-        document.title = "Admin | Booking"
-
         // get sem and year end date from firestore in settings collection
 
         const getSemEndDate = async () => {
@@ -107,9 +105,7 @@ const Page = () => {
 
 
     if (!user) return (
-        <div className="w-full h-full flex flex-wrap justify-center items-center  gap-4 mix-blend-color-overlay ">
-            <h1 className="text-4xl font-bold text-red-500">You are not signed in</h1>
-        </div>
+        <NotLogged />
     )
 
     return (

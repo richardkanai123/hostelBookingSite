@@ -13,6 +13,7 @@ import { setDoc, doc } from 'firebase/firestore'
 // react toastify
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import NotLogged from '@/components/NotLogged'
 
 
 const Page = () => {
@@ -56,18 +57,7 @@ const Page = () => {
     if (!user && !loading) {
         // div with a button to redirect to login page
         return (
-
-            <div className='w-full h-screen flex flex-col justify-center items-center gap-2 text-cyan-800'>
-                <h1
-                    className='text-2xl font-bold'
-                >You are not logged in</h1>
-                <button
-                    onClick={() => {
-                        router.push('/Login')
-                    }}
-                    className='w-[200px] self-center mx-auto p-2 rounded-md bg-blue-700 text-white font-bold'
-                >Log In</button>
-            </div>
+            <NotLogged />
         )
     }
 
@@ -161,8 +151,12 @@ const Page = () => {
                     {/* log out button */}
 
                     <button
-                        onClick={() => {
-                            auth.signOut()
+                        onClick={async () => {
+                            await auth.signOut()
+                                .then(() => {
+                                    router.push('/Login')
+                                })
+
                         }}
                         className='w-[200px] self-center mx-auto p-2 rounded-md bg-red-700 text-white font-bold'
                     >Log Out</button>

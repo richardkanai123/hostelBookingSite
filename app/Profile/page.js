@@ -49,7 +49,6 @@ const StudentPage = () => {
         if (user) {
             const LoggedUserBookings = bookingsList.filter((booking) => booking.BookedBy === user.uid)
             setUserBookings(LoggedUserBookings)
-            console.log(LoggedUserBookings)
         }
     }, [bookingsList, currentUser, user])
 

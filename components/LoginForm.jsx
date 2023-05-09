@@ -3,9 +3,6 @@ import React from 'react'
 import { auth } from '@/app/utils/Firebase/Firebase'
 import { sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth'
 import { useRouter } from 'next/navigation'
-
-
-
 // yup
 // yup for validation
 import * as yup from 'yup'
@@ -38,11 +35,15 @@ const LoginForm = () => {
     // try to login
     try {
       // login
-      await signInWithEmailAndPassword(auth, email, password)
-      // toastify
-      toast.success('Login successful')
-      // redirect to home
-      Router.push('/')
+      await signInWithEmailAndPassword(auth, email, password).then(() => {
+        // toastify
+        toast.success('Login successful')
+      })
+      // redirect to dashboard
+        .finally(() => {
+          Router.push('/')
+        }
+      )
 
     } catch (error) {
       // toastify

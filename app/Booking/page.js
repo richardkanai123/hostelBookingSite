@@ -75,9 +75,6 @@ const Booking = () => {
             }
             else {
                 // proceed to book room
-                // log to console the selected room and duration
-                console.log(RoomNumber, Duration);
-
                 const newBooking = {
                     BookedBy: user.uid,
                     studentID: CurrentUser.studentID,
